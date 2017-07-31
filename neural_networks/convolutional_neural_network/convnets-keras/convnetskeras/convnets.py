@@ -25,7 +25,6 @@ VGG_16_IMAGE_SHAPE = (224, 224)
 VGG_19_IMAGE_SHAPE = (224, 224)
 ALEXNET_IMAGE_SHAPE = (227, 227)
 
-
 def convnet(network, number_of_output_class, weights_path=None, heatmap=False, trainable=None):
     """
     Returns a keras model for a CNN.
@@ -87,7 +86,7 @@ def convnet(network, number_of_output_class, weights_path=None, heatmap=False, t
 
     # Select the network
     convnet_init = __get_model_based_on_input_network(network,number_of_output_class)
-    convnet = convnet_init(number_of_output_class, weights_path, heatmap=False)
+    convnet = convnet_init(number_of_output_class, weights_path)
     return __get_heatmap_model() if heatmap else convnet
 
 
